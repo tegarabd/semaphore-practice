@@ -8,6 +8,11 @@ const Container = styled.div`
   align-items: center;
   justify-content: end;
   height: 48rem;
+  transform: scale(0.8);
+
+  @media (max-width: 768px) {
+    transform: scale(0.4);
+  }
 `;
 
 const Head = styled.div`

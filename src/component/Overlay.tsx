@@ -13,11 +13,15 @@ const Background = styled.div`
 const Container = styled.div`
   background-color: white;
   padding: 2rem;
-  width: 30rem;
+  width: 25rem;
   border-radius: 2rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+  @media (max-width: 768px) {
+    width: 15rem;
+  }
 `;
 
 function Overlay({ children }: { children: ReactNode | ReactNode[] }) {

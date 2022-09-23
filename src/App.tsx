@@ -39,6 +39,10 @@ const Line = styled.div`
   justify-content: space-around;
   align-items: center;
   border-radius: 100vw;
+  @media (max-width: 768px) {
+    width: 10rem;
+    height: 0.3125;
+  }
 `;
 
 const Circle = styled(Center)`
@@ -46,6 +50,10 @@ const Circle = styled(Center)`
   height: 1.5rem;
   background-color: #cbd5e1;
   border-radius: 50%;
+  @media (max-width: 768px) {
+    width: 1rem;
+    height: 1rem;
+  }
 `;
 
 function Journey({
@@ -63,7 +71,7 @@ function Journey({
     for (let j = 0; j < 5; j++) {
       const currIdx = (i * 5) + j;
       circles.push(
-        <Circle>
+        <Circle key={j} >
           {currIdx < guesses.length ? (
             guesses[currIdx] ? (
               <FaCheckCircle
@@ -83,7 +91,7 @@ function Journey({
       );
     }
 
-    lines.push(<Line>{circles}</Line>);
+    lines.push(<Line key={i} >{circles}</Line>);
   }
 
   return <>{lines}</>;
