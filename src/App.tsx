@@ -69,9 +69,9 @@ function Journey({
     const circles = [];
 
     for (let j = 0; j < 5; j++) {
-      const currIdx = (i * 5) + j;
+      const currIdx = i * 5 + j;
       circles.push(
-        <Circle key={j} >
+        <Circle key={j}>
           {currIdx < guesses.length ? (
             guesses[currIdx] ? (
               <FaCheckCircle
@@ -91,7 +91,7 @@ function Journey({
       );
     }
 
-    lines.push(<Line key={i} >{circles}</Line>);
+    lines.push(<Line key={i}>{circles}</Line>);
   }
 
   return <>{lines}</>;
@@ -127,6 +127,7 @@ function App() {
     setAnswers([]);
     setGuesses([]);
     setGuessed(false);
+    setGuess("");
   };
 
   const startSign = () => {
